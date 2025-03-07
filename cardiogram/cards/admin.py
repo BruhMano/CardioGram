@@ -1,7 +1,12 @@
 from django.contrib import admin
-from .models import CardModel
+from .models import Card
 
 class CardAdmin(admin.ModelAdmin):
-    fields = ['card_id', 'deck_id', 'front_text', 'back_text', 'description']
+    fieldsets = [(
+            None,
+            {
+                'fields': [ 'deck_id', 'front_text', 'back_text', 'example_usage']
+            }
+        )]
 
-admin.site.register(CardModel, CardAdmin)
+admin.site.register(Card, CardAdmin)

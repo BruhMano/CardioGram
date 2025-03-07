@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cards',
-    'decks'
+    'decks',
+    'users_progress',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
