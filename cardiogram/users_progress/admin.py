@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Progress
 from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 
 class CustomUserAdmin(UserAdmin):
@@ -13,8 +13,7 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
         ('Personal info', {'fields': ('first_name', 'last_name', 'email')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser')}),
     )
 
 class ProgressAdmin(admin.ModelAdmin):
@@ -22,8 +21,8 @@ class ProgressAdmin(admin.ModelAdmin):
 
     list_display = ['progress_id', 'user_id', 'card_id','attempts', 'successful_attempts']
 
-admin.site.unregister(User)
+admin.site.unregister(get_user_model())
 admin.site.unregister(Group)
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(get_user_model(), CustomUserAdmin)
 admin.site.register(Progress, ProgressAdmin)
 
