@@ -1,0 +1,7 @@
+FROM postgres:latest
+
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=1964
+ENV POSTGRES_DB=cardiogram
+
+EXPOSE 5432
