@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'cardiogram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': getenv('NAME'),
-        'USER': getenv('USER'),
-        'PASSWORD': getenv('PASSWORD'),
+        'NAME': getenv('POSTGRES_DB'),
+        'USER': getenv('POSTGRES_USER'),
+        'PASSWORD': getenv('POSTGRES_PASSWORD'),
         'HOST': getenv('HOST'),
         'PORT': getenv('PORT')
     }
