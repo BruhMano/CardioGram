@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'cards',
     'decks',
     'users_progress',
-    'rest_framework'
+    'rest_framework',
+    'cardiogram'
 ]
 
 MIDDLEWARE = [

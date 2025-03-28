@@ -17,9 +17,9 @@ class CustomUserAdmin(UserAdmin):
     )
 
 class ProgressAdmin(admin.ModelAdmin):
-    fieldsets = [(None,{'fields': ['user_id', 'card_id','attempts', 'successful_attempts']})]
+    fieldsets = [(None,{'fields': ['user', 'card','attempts', 'successful_attempts']})]
 
-    list_display = ['progress_id', 'user_id', 'card_id','attempts', 'successful_attempts']
+    list_display = ['id', 'user', 'card','attempts', 'successful_attempts']
 
 admin.site.unregister(get_user_model())
 admin.site.unregister(Group)

@@ -1,8 +1,7 @@
 from django.db import models
 
 class Deck(models.Model):
-    deck_id = models.AutoField(primary_key=True)
-    deck_name = models.CharField(max_length=100, unique=True, null=False)
+    name = models.CharField(max_length=100, unique=True, null=False)
     description = models.TextField(unique=True, null=True)
 
     class Meta:
@@ -11,4 +10,4 @@ class Deck(models.Model):
 
 
     def __str__(self):
-        return self.deck_name
+        return self.name
