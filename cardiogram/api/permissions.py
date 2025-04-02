@@ -8,9 +8,13 @@ class IsAdminOrReadOnly(BasePermission):
             return True
         return request.user.is_staff
 
-class IsOwner(BasePermission):
+class IsAdminOrIsOwnerReadOnly(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return obj.user == request.user
+        if request.user.is_staff:
+            return True
+        if request.method in SAFE_METHODS:
+            try:
+                return obj.user == request.user
+            except AttributeError:
+                return obj == request.user
 
-    # def has_permission(self, request, view):
-    #     return false
