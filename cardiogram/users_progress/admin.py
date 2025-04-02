@@ -6,7 +6,7 @@ from django.contrib.auth.models import Group
 
 class CustomUserAdmin(UserAdmin):
 
-    list_display = ('username', 'email', 'password', 'first_name', 'last_name', 'is_staff', 'date_joined')
+    list_display = ('id', 'username', 'email', 'password', 'first_name', 'last_name', 'is_staff', 'date_joined')
     list_filter = ('is_staff', 'is_superuser', 'is_active')
     search_fields = ('username', 'first_name', 'last_name', 'email')
 
@@ -18,8 +18,8 @@ class CustomUserAdmin(UserAdmin):
 
 class ProgressAdmin(admin.ModelAdmin):
     fieldsets = [(None,{'fields': ['user', 'card','attempts', 'successful_attempts']})]
-
-    list_display = ['id', 'user', 'card','attempts', 'successful_attempts']
+    search_fields = ['user', 'card']
+    list_display = ['id', 'user', 'card', 'attempts', 'successful_attempts']
 
 admin.site.unregister(get_user_model())
 admin.site.unregister(Group)
