@@ -17,4 +17,4 @@ class IsAdminOrIsOwnerReadOnly(BasePermission):
                 return obj.user == request.user
             except AttributeError:
                 return obj == request.user
-
+        return false

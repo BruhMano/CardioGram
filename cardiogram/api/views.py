@@ -20,16 +20,16 @@ class DeckViewset(ModelViewSet):
 
 class UserProgressViewset(ModelViewSet):
     serializer_class = UserProgressSerializer
-    permission_classes = (IsAdminOrIsOwnerReadOnly,)
+    permission_classes = (IsAdminOrIsOwnerReadOnly, permissions.IsAuthenticated)
 
     def get_queryset(self):
         if self.request.user.is_staff:
             return Progress.objects.all()
-        return Progress.objects.filter(user = self.request.user)
+        return Progress.objects.filter(user = self.request.user.id)
 
 class UserViewset(ModelViewSet):
     serializer_class = UserSerializer
-    permission_classes = (IsAdminOrIsOwnerReadOnly,)
+    permission_classes = (IsAdminOrIsOwnerReadOnly, permissions.IsAuthenticated)
 
     def get_queryset(self):
         if self.request.user.is_staff:
