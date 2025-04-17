@@ -22,4 +22,4 @@ class UserProgressSerializer(ModelSerializer):
 class UserSerializer(ModelSerializer):
     class Meta:
         model = get_user_model()
-        fields = ['username', 'email', 'password', 'first_name', 'last_name', 'is_staff']
+        fields = ['username', 'email', 'password', 'first_name', 'last_name']

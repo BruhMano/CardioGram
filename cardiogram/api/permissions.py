@@ -1,5 +1,4 @@
 from rest_framework.permissions import BasePermission, SAFE_METHODS
-from sympy import false
 
 
 class IsAdminOrReadOnly(BasePermission):
@@ -17,4 +16,4 @@ class IsAdminOrIsOwnerReadOnly(BasePermission):
                 return obj.user == request.user
             except AttributeError:
                 return obj == request.user
-        return false
+        return False
