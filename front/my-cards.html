@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CardioGram</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css "
+    />
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="stylesheet" href="static/cards-style.css" />
+    <style>
+      .screen-left,
+      .screen-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 3;
+        cursor: pointer;
+      }
+
+      .screen-right {
+        right: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">CardioGram</div>
+      <nav class="nav">
+        <a href="#">Колоды</a>
+        <!-- <button class="login-button">Войти</button> -->
+        <button class="button">
+          <img src="static/profile.png" alt="" class="profile-img" />
+        </button>
+      </nav>
+    </header>
+    <div class="screen-left" onclick="nextSlide()"></div>
+    <div class="screen-right" onclick="prevSlide()"></div>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="card-space">
+            <div class="card-back">
+              <div>
+                <p class="title">Forest</p>
+                <p class="translation">Лес</p>
+              </div>
+              <div class="image"></div>
+              <div>
+                <p class="desc">The forest is home to many animals</p>
+                <p class="translation">
+                  (Лес является домом для многих животных.)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-space">
+            <div class="card-back">
+              <div>
+                <p class="title">Forest</p>
+                <p class="translation">Лес</p>
+              </div>
+              <div class="image"></div>
+              <div>
+                <p class="desc">The forest is home to many animals</p>
+                <p class="translation">
+                  (Лес является домом для многих животных.)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-space">
+            <div class="card-back">
+              <div>
+                <p class="title">Forest</p>
+                <p class="translation">Лес</p>
+              </div>
+              <div class="image"></div>
+              <div>
+                <p class="desc">The forest is home to many animals</p>
+                <p class="translation">
+                  (Лес является домом для многих животных.)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="card-space">
+            <div class="card-back">
+              <div>
+                <p class="title">Forest</p>
+                <p class="translation">Лес</p>
+              </div>
+              <div class="image"></div>
+              <div>
+                <p class="desc">The forest is home to many animals</p>
+                <p class="translation">
+                  (Лес является домом для многих животных.)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+      });
+      function prevSlide() {
+        swiper.slidePrev();
+      }
+
+      function nextSlide() {
+        swiper.slideNext();
+      }
+    </script>
+  </body>
+</html>
