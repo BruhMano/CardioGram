@@ -1,0 +1,107 @@
+.profilePage {
+  --secondary-color: #f3094e;
+  --primary-color: #fee5e8;
+  --card-color: #f04275;
+  --body-color: #0e091c;
+  background-color: var(--primary-color);
+  font-size: 2rem;
+  min-height: 100vh;
+  color: var(--body-color);
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.profileImg {
+  width: 200%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button {
+  margin: 2rem;
+  height: 7rem;
+  width: 7rem;
+  padding: 0.7rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+}
+
+.progress,
+.personal,
+.myCards {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 30px;
+  background-color: white;
+  text-align: center;
+  font-weight: 400;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+
+.personal {
+  text-align: left;
+}
+
+.cardBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--card-color);
+  background-color: white;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 0 0 30px var(--card-color);
+  border-radius: 30px;
+  aspect-ratio: 7/8;
+  font-size: 0.7rem;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+}
+
+.desc {
+  margin: 0.5rem 2rem 0.5rem 2rem;
+}

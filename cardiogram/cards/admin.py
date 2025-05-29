@@ -7,7 +7,7 @@ class CardAdmin(admin.ModelAdmin):
     search_fields = ('front_text', 'back_text')
 
     fieldsets = (
-        ('Content', {'fields': ['front_text', 'back_text', 'example_usage']},),
+        ('Content', {'fields': ['front_text', 'back_text', 'example_usage', 'deck']},),
         )
 
 admin.site.register(Card, CardAdmin)

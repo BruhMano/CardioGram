@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CardioGram</title>
     <link rel="stylesheet" href="static/cards-style.css" />
+    <style>
+      .screen-left,
+      .screen-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: 3;
+        cursor: pointer;
+      }
+
+      .screen-right {
+        right: 0;
+      }
+    </style>
   </head>
   <body style="background-image: url(static/cards-background.png)">
     <header class="header">

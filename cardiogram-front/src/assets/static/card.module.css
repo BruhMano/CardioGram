@@ -1,0 +1,111 @@
+.screenLeft,
+.screenRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.screenRight {
+   right: 0;
+}
+
+.cardPage {
+  background-color: #0e091c;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  --secondary-color: #f3094e;
+  --primary-color: #fee5e8;
+  --card-color: #f04275;
+}
+
+.cardSpace {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.cardBack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--card-color);
+  background-color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+  box-shadow: 0 0 30px var(--card-color);
+  border-radius: 30px;
+  height: 75vh;
+  aspect-ratio: 3/4;
+}
+
+.cardFront {
+  background-color: var(--card-color);
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px var(--card-color);
+  border-radius: 30px;
+  height: 75vh;
+  aspect-ratio: 3/4;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+}
+
+.image {
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+  padding: 7rem;
+}
+
+.desc {
+  margin: 3rem 2rem 0.5rem 2rem;
+}
+
+.translation {
+  margin: 0rem 3rem 3rem 3rem;
+  opacity: 70%;
+}
+
+.image.small{
+  padding: 4rem;
+}
+
+.cardBack.small{
+    height: 40vh;
+    font-size: 0.6rem;
+}
+
+.title.small{
+  font-size: 1rem;
+}
+
+.subtitle.small{
+  font-size: 0.6rem;
+}
+
+.desc.small{
+  margin: 1.5rem 1rem 0.25rem 1rem;
+}
+
+.cardSpace.small{
+  margin-right: 1rem;
+}

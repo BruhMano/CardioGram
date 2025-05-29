@@ -1,0 +1,217 @@
+/* src/assets/static/Home.module.css */
+
+.home {
+  --primary-color: #f3094e;
+  --secondary-color: #fee5e8;
+  --body-color: #0e091c;
+  min-height: 100vh;
+  --dark-fade-color: #84012d;
+  --secondary-body-color: rgba(255, 255, 255, 0.05);
+  --grey-line-color: #333;
+
+  background: var(--body-color);
+  color: var(--secondary-color);
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-position: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  color: var(--secondary-color);
+  font-size: 1.3rem;
+  margin-right: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button {
+  height: 3rem;
+  width: 3rem;
+  margin-left: 1rem;
+  padding: 0.7rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loginButton {
+  margin-left: 1rem;
+  padding: 0.7rem;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profileImg {
+  width: 200%;
+}
+.carousel {
+  margin: 2% 0;
+}
+
+.carousel-item img {
+  width: 45%;
+  aspect-ratio: 16/9;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+.hero {
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    var(--dark-fade-color),
+    var(--primary-color)
+  );
+  padding: 2rem 1rem 7rem 1rem;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin: 3rem auto;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.subtext {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.startBtnDiv {
+  position: relative;
+  margin-top: -2%;
+  display: flex;
+  justify-content: center;
+}
+
+.startBtn {
+  background: var(--secondary-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.startBtn a {
+  color: var(--primary-color);
+}
+
+.howItWorks {
+  padding: 2rem 1rem;
+  font-size: 2.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.howItWorks h2 {
+  font-size: 4rem;
+  margin: 2rem;
+}
+
+.guideLine {
+  display: flex;
+  justify-content: space-between;
+  margin: 2.5rem;
+}
+
+.guideText {
+  width: 50%;
+}
+
+.checkList {
+  background: var(--secondary-body-color);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--body-color);
+  border-top: 2px solid var(--grey-line-color);
+}
+
+.refreshIconDiv {
+  position: relative;
+  margin-top: -6%;
+  display: flex;
+  justify-content: center;
+}
+
+.refreshIcon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border: 2px solid var(--grey-line-color);
+  color: var(--secondary-color);
+  background-color: var(--body-color);
+  padding: 0.8rem 1.5rem;
+  font-size: 1.5rem;
+  border-radius: 100%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.footerText {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.footer a {
+  color: var(--secondary-color);
+}
