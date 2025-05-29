@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os.path
 from pathlib import Path
-
-from django.conf.global_settings import MEDIA_URL
 from dotenv import load_dotenv
 from os import getenv
 from datetime import timedelta
@@ -27,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ro2@!w+@(46^y-=s4k5=3=r)tu5ew3h*yhoi=%j(*47t9pih69'
+SECRET_KEY = getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv('DJANGO_DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [getenv('DJANGO_ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -69,8 +67,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cardiogram.urls'
 
-CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:3000"]
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [getenv('CORS_ALLOWED_ORIGINS')]
+CORS_ALLOW_CREDENTIALS = bool(getenv('CORS_ALLOW_CREDENTIALS'))
 
 TEMPLATES = [
     {
@@ -90,10 +88,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cardiogram.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -104,10 +98,6 @@ DATABASES = {
         'PORT': getenv('PORT')
     }
 }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,10 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -136,23 +122,16 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
 STATIC_URL = 'static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # 'rest_framework.authentication.SessionAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }

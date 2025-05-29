@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: cardiogram-database
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  backend:
+    build: cardiogram/
+    container_name: cardiogram-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    restart: always
+    env_file:
+      - .env
+
+  frontend:
+    build: cardiogram-front/
+    container_name: cardiogram-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  postgres_data:

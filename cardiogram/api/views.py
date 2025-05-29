@@ -25,7 +25,7 @@ class DeckRetrieve(generics.RetrieveAPIView):
     def get(self, request, *args, **kwargs):
         deck = self.get_object()
         queryset = (Card.objects.filter(deck = deck)
-                    .exclude(id__in = [card.id for card in
+                    .exclude(id__in = [progress.card.id for progress in
                                        Progress.objects.filter(user = request.user)]))
         serializer = CardSerializer(queryset, many = True)
         return Response(serializer.data)
