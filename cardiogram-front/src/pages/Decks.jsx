@@ -7,6 +7,18 @@ import style from '../assets/static/decks.module.css';
 function Decks() {
 
   const [decks, setDecks] = useState([]);
+  const [isAuthorized, setIsAuthorized] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get('http://127.0.0.1:8000/api/progress/', { withCredentials: true })
+      .then((res) => {
+        setIsAuthorized(true);
+      })
+      .catch(() => {
+        setIsAuthorized(false);
+      });
+  }, []);
 
   useEffect(() => {
     axios
@@ -24,7 +36,7 @@ function Decks() {
       <Header />
       {decks.map((deck, index) => (
         <div className={style.deck} key={deck.id}>
-          <Link to={`/deck/${deck.id}/`} >
+          <Link to={isAuthorized ? `/deck/${deck.id}/`: '/'} >
             <img src={deck.cover} alt={deck.title} />
           </Link>
           <div className={style.desc}>

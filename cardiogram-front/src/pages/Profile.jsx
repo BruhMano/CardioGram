@@ -85,7 +85,7 @@ const Profile = () => {
           <div className={style.row}>
             <div className={style.progress}>
               <b>Прогресс изучения</b><br />
-              {Math.round((totalSuccess/ totalAttempts)*100)}%
+              {Math.round((totalAttempts ? (totalSuccess/ totalAttempts):0)*100)}%
             </div>
             <Link to="/my-cards/">
               <div className={style.myCards}>

@@ -8,17 +8,15 @@ const Header = () => {
   const [isAuthorized, setIsAuthorized] = useState(null);
 
   useEffect(() => {
-    fetchProgress();
+    axios
+      .get('http://127.0.0.1:8000/api/progress/', { withCredentials: true })
+      .then((res) => {
+        setIsAuthorized(true);
+      })
+      .catch(() => {
+        setIsAuthorized(false);
+      });
   }, []);
-
-  const fetchProgress = async () => {
-    try {
-      await axios.get('http://127.0.0.1:8000/api/progress/', { withCredentials: true });
-      setIsAuthorized(true);
-    } catch (err) {
-      setIsAuthorized(false);
-    }
-  };
 
   return (
     <header className={styles.header}>

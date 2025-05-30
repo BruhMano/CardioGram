@@ -40,7 +40,7 @@ const Learn = () => {
     if (currentIndex !== -1) {
       axios
         .patch('http://127.0.0.1:8000/api/progress/right/', { card_id: cards[currentIndex].card }, { withCredentials: true })
-        .then(() => {})
+//         .then(() => {})
         .catch((err) => {
           console.error(err);
         });
