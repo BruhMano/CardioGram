@@ -67,6 +67,11 @@ header {
   margin: 2% 0;
 }
 
+.carousel-item.active img {
+  border-radius: 30px;
+  object-fit: cover;
+}
+
 .hero {
   text-align: center;
   background: linear-gradient(

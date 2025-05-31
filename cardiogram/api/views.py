@@ -164,6 +164,6 @@ class UserAuth(views.APIView):
             user.first_name=request.data.get('first_name')
             user.last_name=request.data.get('last_name')
             user.save()
-            return Response("Profile editing complited successfully!",200)
+            return Response("Profile editing completed successfully!",200)
         else:
             return Response(f"Bad Request. We dont have {action}/ page...", status = 400)
