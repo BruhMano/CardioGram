@@ -29,9 +29,8 @@ SECRET_KEY = getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = getenv('DJANGO_DEBUG')
-
-ALLOWED_HOSTS = [getenv('DJANGO_ALLOWED_HOSTS')]
-
+allowed_hosts_str = getenv('DJANGO_ALLOWED_HOSTS')
+ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_str.split(',')]
 
 # Application definition
 
@@ -68,7 +67,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'cardiogram.urls'
 
 CORS_ALLOWED_ORIGINS = [getenv('CORS_ALLOWED_ORIGINS')]
-CORS_ALLOW_CREDENTIALS = bool(getenv('CORS_ALLOW_CREDENTIALS'))
+CORS_ALLOW_CREDENTIALS = True
 
 TEMPLATES = [
     {
