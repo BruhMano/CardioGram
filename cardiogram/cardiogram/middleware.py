@@ -25,7 +25,7 @@ class RefreshAccessTokenMiddleware:
                             key='access_token',
                             value=str(new_access_token),
                             httponly=True,
-                            samesite='Lax'
+                            samesite='None'
                         )
                         response.status_code = 200
                         return response

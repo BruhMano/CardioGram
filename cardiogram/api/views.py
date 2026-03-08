@@ -127,16 +127,16 @@ class UserAuth(views.APIView):
             response.set_cookie(
                 key='refresh_token',
                 value=str(refresh),
-                secure=False,
+                secure=True,
                 httponly=True,
-                samesite='Lax'
+                samesite='None'
             )
             response.set_cookie(
                 key='access_token',
                 value=str(refresh.access_token),
-                secure=False,
+                secure=True,
                 httponly=True,
-                samesite='Lax'
+                samesite='None'
             )
             response.data = {
                 'message': 'Login successful'
