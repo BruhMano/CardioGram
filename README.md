@@ -10,6 +10,74 @@
 Учебный проект разработан с целью демонстрации навыков работы с базой данных и инструментами серверной и клиентской 
 разработки, проектирования структуры приложений и API, контейнеризации.
 
+# Быстрый старт
+1. Клонируйте репозиторий
+```
+git clone <url-вашего-репозитория>
+cd <название-проекта>
+```
+2. Подготовка окружения
+
+Создайте файл .env в корневой директории проекта.
+
+Минимальное содержимое .env файла:
+```
+# Django settings
+DEBUG=1
+SECRET_KEY=your-secret-key-here-change-in-production
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1
+
+# Database settings
+POSTGRES_ENGINE=django.db.backends.postgresql
+POSTGRES_DB=your_db_name
+POSTGRES_USER=your_db_user
+POSTGRES_PASSWORD=your_db_password
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+```
+3. Сборка и запуск
+```
+# Соберите образы
+docker-compose build
+
+# Запустите контейнеры в фоновом режиме
+docker-compose up -d
+
+# Проверьте статус контейнеров
+docker-compose ps
+
+# Посмотрите логи
+docker-compose logs -f
+```
+4. Применение миграций и сбор статики
+```
+# Применить миграции
+docker-compose exec web python manage.py migrate
+
+# Собрать статические файлы
+docker-compose exec web python manage.py collectstatic --noinput
+
+# Создать суперпользователя
+docker-compose exec web python manage.py createsuperuser
+```
+5. Восстановление БД через командную строку
+
+5.1 Поместите файл бэкапа
+
+Создайте папку backups в корне проекта и поместите туда ваш .sql файл:
+
+```
+mkdir -p backups
+cp /path/to/your/backup.sql backups/
+```
+5.2 Восстановите базу данных
+```
+# Для PostgreSQL контейнера
+docker exec -i project_postgres psql -U your_db_user your_db_name < backups/backup.sql
+
+# Или через docker-compose
+docker-compose exec -T postgres psql -U your_db_user your_db_name < backups/backup.sql
+```
 # Структура API
 
 |     |     |     |     |     |     |
